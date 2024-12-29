@@ -113,3 +113,43 @@ export const suggestion = pgTable(
 );
 
 export type Suggestion = InferSelectModel<typeof suggestion>;
+
+export const insuranceCompany = pgTable('InsuranceCompany', {
+  id: uuid('id').primaryKey().notNull().defaultRandom(),
+  name: varchar('name', { length: 255 }).notNull(),
+  createdAt: timestamp('createdAt').notNull().defaultNow(),
+});
+
+export type InsuranceCompany = InferSelectModel<typeof insuranceCompany>;
+
+export const insurancePlan = pgTable('InsurancePlan', {
+  id: uuid('id').primaryKey().notNull().defaultRandom(),
+  companyId: uuid('companyId')
+    .notNull()
+    .references(() => insuranceCompany.id),
+  name: varchar('name', { length: 255 }).notNull(),
+  type: varchar('type', { length: 64 }).notNull(),
+  createdAt: timestamp('createdAt').notNull().defaultNow(),
+});
+
+export type InsurancePlan = InferSelectModel<typeof insurancePlan>;
+
+export const userInsurance = pgTable(
+  'UserInsurance',
+  {
+    userId: uuid('userId')
+      .notNull()
+      .references(() => user.id),
+    planId: uuid('planId')
+      .notNull()
+      .references(() => insurancePlan.id),
+    memberId: varchar('memberId', { length: 255 }),
+    groupId: varchar('groupId', { length: 255 }),
+    createdAt: timestamp('createdAt').notNull().defaultNow(),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.userId, table.planId] }),
+  }),
+);
+
+export type UserInsurance = InferSelectModel<typeof userInsurance>;
