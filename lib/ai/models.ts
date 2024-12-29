@@ -9,17 +9,23 @@ export interface Model {
 
 export const models: Array<Model> = [
   {
-    id: 'gpt-4o-mini',
-    label: 'GPT 4o mini',
-    apiIdentifier: 'gpt-4o-mini',
+    id: 'grok-2',
+    label: 'HatchAI Light',
+    apiIdentifier: 'grok-2',
     description: 'Small model for fast, lightweight tasks',
   },
   {
-    id: 'gpt-4o',
-    label: 'GPT 4o',
-    apiIdentifier: 'gpt-4o',
+    id: 'grok-beta',
+    label: 'HatchAI Beta',
+    apiIdentifier: 'grok-beta',
     description: 'For complex, multi-step tasks',
+  },
+  {
+    id: 'grok-2-vision-1212',
+    label: 'HatchAI Vision',
+    apiIdentifier: 'grok-2-vision-1212',
+    description: 'Work with images. Allowed: *.jpg and *.png',
   },
 ] as const;
 
-export const DEFAULT_MODEL_NAME: string = 'gpt-4o-mini';
+export const DEFAULT_MODEL_NAME: string = 'grok-2';

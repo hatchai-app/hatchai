@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
-import { ChatRequestOptions, CreateMessage, Message } from 'ai';
+import type { ChatRequestOptions, CreateMessage, Message } from 'ai';
 import { memo } from 'react';
 
 interface SuggestedActionsProps {
@@ -16,25 +16,25 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      "title": "Check Coverage Details",
+      "label": "for a specific procedure",
+      "action": "Check coverage details for a specific medical procedure."
     },
     {
-      title: 'Write code that',
-      label: `demonstrates djikstra's algorithm`,
-      action: `Write code that demonstrates djikstra's algorithm`,
+      "title": "Understand Claim Status",
+      "label": "of my recent claim",
+      "action": "Understand the status of my recent health insurance claim."
     },
     {
-      title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      "title": "Review Out-of-Pocket Costs",
+      "label": "for this year",
+      "action": "Review my out-of-pocket costs for this year."
     },
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
-    },
+      "title": "Find In-Network Providers",
+      "label": "near my location",
+      "action": "Find in-network healthcare providers near my location."
+    }
   ];
 
   return (
