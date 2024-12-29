@@ -21,19 +21,19 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
       "action": "Check coverage details for a specific medical procedure."
     },
     {
-      "title": "Understand Claim Status",
-      "label": "of my recent claim",
-      "action": "Understand the status of my recent health insurance claim."
+      "title": "Understand Insurance Policy",
+      "label": "so I can understand legal jargon",
+      "action": "Help me understand my insurance policy, and some clauses I should look out for."
     },
     {
-      "title": "Review Out-of-Pocket Costs",
-      "label": "for this year",
-      "action": "Review my out-of-pocket costs for this year."
+      "title": "Draft a Document",
+      "label": "for filing a claim",
+      "action": "Help me draft a document to with specifics to file a claim. What information do you need from me?"
     },
     {
-      "title": "Find In-Network Providers",
-      "label": "near my location",
-      "action": "Find in-network healthcare providers near my location."
+      "title": "Work With Images",
+      "label": "to read the fine print",
+      "action": "What's in the image I have attached?"
     }
   ];
 
