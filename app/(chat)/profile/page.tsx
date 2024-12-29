@@ -2,7 +2,6 @@
 import { auth } from "@/app/(auth)/auth";
 import { getInsuranceCompanies, getCurrentUserInsurance } from "./actions";
 import InsuranceForm from "./insurance-form";
-import { ArrowRight } from "lucide-react";
 import demo from "@/public/images/demo.svg";
 import Image from "next/image";
 

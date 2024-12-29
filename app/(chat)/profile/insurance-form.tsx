@@ -49,8 +49,9 @@ export default function InsuranceForm({ companies, currentInsurance }: Insurance
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <label className="text-sm font-medium">Insurance Company</label>
+        <label className="text-sm font-medium" htmlFor="company">Insurance Company</label>
         <Select
+          name="company"
           value={selectedCompany}
           onValueChange={(value) => {
             setSelectedCompany(value);
@@ -71,8 +72,9 @@ export default function InsuranceForm({ companies, currentInsurance }: Insurance
       </div>
 
       <div className="space-y-2">
-        <label className="text-sm font-medium">Insurance Plan</label>
+        <label className="text-sm font-medium" htmlFor="plan">Insurance Plan</label>
         <Select
+          name="plan"
           value={selectedPlan}
           onValueChange={setSelectedPlan}
           disabled={!selectedCompany || availablePlans.length === 0}
@@ -89,7 +91,7 @@ export default function InsuranceForm({ companies, currentInsurance }: Insurance
           </SelectContent>
         </Select>
       </div>
-      <div className="h-2 w-full"></div>
+      <div className="h-2 w-full" />
       <Button 
         type="submit" 
         disabled={!selectedCompany || !selectedPlan || isLoading}

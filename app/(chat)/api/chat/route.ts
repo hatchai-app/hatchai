@@ -8,7 +8,6 @@ import {
 import { z } from "zod";
 
 import { auth } from "@/app/(auth)/auth";
-import { db } from "@/lib/db/queries";
 import {
   insuranceCompany,
   insurancePlan,
@@ -22,6 +21,7 @@ import {
   updateDocumentPrompt,
 } from "@/lib/ai/prompts";
 import {
+  db,
   deleteChatById,
   getChatById,
   getDocumentById,
