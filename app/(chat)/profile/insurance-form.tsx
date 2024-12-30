@@ -107,12 +107,12 @@ export default function InsuranceForm({ companies, currentInsurance }: Insurance
           <Button onClick={() => setIsEditing(true)}>Edit Details</Button>
         </div>
 
-        {currentInsurance.detailsJson.medicalBills?.length > 0 && (
+        {(currentInsurance?.detailsJson?.medicalBills?.length ?? 0) > 0 && (
           <Card>
             <CardContent className="pt-6">
               <h3 className="text-lg font-medium mb-4">Medical Bills</h3>
               <div className="space-y-4">
-                {currentInsurance.detailsJson.medicalBills.map((bill, index) => (
+                {currentInsurance?.detailsJson?.medicalBills?.map((bill, index) => (
                   <div key={index} className="grid grid-cols-3 gap-4 p-4 bg-muted rounded-lg">
                     <div>
                       <p className="text-sm text-muted-foreground">Date</p>
@@ -133,12 +133,12 @@ export default function InsuranceForm({ companies, currentInsurance }: Insurance
           </Card>
         )}
 
-        {currentInsurance.detailsJson.transcripts?.length > 0 && (
+        {(currentInsurance.detailsJson.transcripts?.length ?? 0) > 0 && (
           <Card>
             <CardContent className="pt-6">
               <h3 className="text-lg font-medium mb-4">Medical Transcripts</h3>
               <div className="space-y-4">
-                {currentInsurance.detailsJson.transcripts.map((transcript, index) => (
+                {currentInsurance.detailsJson.transcripts?.map((transcript, index) => (
                   <div key={index} className="p-4 bg-muted rounded-lg">
                     <div className="mb-2">
                       <p className="text-sm text-muted-foreground">Date</p>
