@@ -1,0 +1,1 @@
+ALTER TABLE "UserInsurance" ADD COLUMN "details" varchar(255);

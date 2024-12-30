@@ -43,6 +43,27 @@
       "when": 1735492723342,
       "tag": "0005_chemical_the_fallen",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1735572112802,
+      "tag": "0006_ancient_skin",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1735572396532,
+      "tag": "0007_even_anthem",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1735572441033,
+      "tag": "0008_easy_meggan",
+      "breakpoints": true
     }
   ]
 }

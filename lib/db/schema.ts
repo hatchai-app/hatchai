@@ -145,6 +145,8 @@ export const userInsurance = pgTable(
       .references(() => insurancePlan.id),
     memberId: varchar('memberId', { length: 255 }),
     groupId: varchar('groupId', { length: 255 }),
+    details: varchar('details', { length: 255 }),
+    detailsJson: json('detailsJson'),
     createdAt: timestamp('createdAt').notNull().defaultNow(),
   },
   (table) => ({

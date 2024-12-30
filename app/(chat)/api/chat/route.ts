@@ -99,6 +99,7 @@ export async function POST(request: Request) {
       plan: insurancePlan.name,
       plan_type: insurancePlan.type,
       company: insuranceCompany.name,
+      details: userInsurance.detailsJson
     })
     .from(userInsurance)
     .leftJoin(insurancePlan, eq(userInsurance.planId, insurancePlan.id))

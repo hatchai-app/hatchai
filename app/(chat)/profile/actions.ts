@@ -26,6 +26,7 @@ export async function getCurrentUserInsurance(userId: string) {
       planType: insurancePlan.type,
       planId: insurancePlan.id,
       companyId: insuranceCompany.id,
+      detailsJson: userInsurance.detailsJson,
     })
     .from(userInsurance)
     .innerJoin(insurancePlan, eq(userInsurance.planId, insurancePlan.id))
@@ -36,7 +37,14 @@ export async function getCurrentUserInsurance(userId: string) {
     .where(eq(userInsurance.userId, userId));
 }
 
-export async function updateInsurance(companyId: string, planId: string) {
+export async function updateInsurance(
+  companyId: string,
+  planId: string,
+  detailsJson?: {
+    medicalBills?: { date: string; amount: string; description: string }[];
+    transcripts?: { date: string; notes: string }[];
+  }
+) {
   const session = await auth();
   const userId = session?.user?.id;
 
@@ -53,6 +61,7 @@ export async function updateInsurance(companyId: string, planId: string) {
   await db.insert(userInsurance).values({
     userId,
     planId,
+    detailsJson: detailsJson || null,
   });
 
   revalidatePath("/profile");

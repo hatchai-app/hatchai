@@ -1,0 +1,1 @@
+ALTER TABLE "UserInsurance" ADD COLUMN "detailsJson" json;
