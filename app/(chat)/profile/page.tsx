@@ -35,7 +35,7 @@ export default async function Profile() {
       </div>
       <InsuranceForm
         companies={companies}
-        currentInsurance={currentInsurance[0] || null}
+        currentInsurance={currentInsurance[0] as any || null}
       />
     </div>
   );

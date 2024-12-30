@@ -7,6 +7,7 @@ import { insuranceCompany, insurancePlan, userInsurance } from "@/lib/db/schema"
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
+
 export async function getInsuranceCompanies() {
   return await db.select().from(insuranceCompany);
 }
